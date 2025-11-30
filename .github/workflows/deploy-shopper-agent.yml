@@ -40,9 +40,9 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Deploy Shopper Agent (Cora)
-      working-directory: ./src/app/agents
+      working-directory: ./src
       run: |
-        python shopperAgent_initializer.py
+        python app/agents/shopperAgent_initializer.py
       env:
         AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
         AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}

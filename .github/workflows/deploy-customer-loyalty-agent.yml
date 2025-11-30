@@ -40,9 +40,9 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Deploy Customer Loyalty Agent
-      working-directory: ./src/app/agents
+      working-directory: ./src
       run: |
-        python customerLoyaltyAgent_initializer.py
+        python app/agents/customerLoyaltyAgent_initializer.py
       env:
         AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
         AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
