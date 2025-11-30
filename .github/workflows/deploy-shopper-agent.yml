@@ -42,6 +42,9 @@ jobs:
     - name: Deploy Shopper Agent (Cora)
       working-directory: ./src
       run: |
+        set -a
+        source .env
+        set +a
         python app/agents/shopperAgent_initializer.py
       env:
         AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}

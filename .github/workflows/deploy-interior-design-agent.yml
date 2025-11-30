@@ -42,6 +42,9 @@ jobs:
     - name: Deploy Interior Design Agent
       working-directory: ./src
       run: |
+        set -a
+        source .env
+        set +a
         python app/agents/interiorDesignAgent_initializer.py
       env:
         AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
